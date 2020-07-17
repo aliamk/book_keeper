@@ -34,3 +34,67 @@ h1:hover {
   background: rgba(0, 0, 0, 0.8);
 
 }
+
+/*  Bookmarks */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a:link,           /* love */
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover,          /* hate */
+a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {           /* Logo */
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;  /* lines up the icon with the bottom of the element next to it */
+  margin-right: 5px;
+}
+
+/* Media Quesry:  Large Smarphone (vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    
+  }
+}
+
+
