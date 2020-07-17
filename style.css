@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+:root {
+  --primary-color: #b99ae7;
+  --border-radius: 5px;
+}
+
 html {
   box-sizing: border-box;  
 }
@@ -5,4 +12,25 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-family: 'Karla', sans-serif;
+}
+
+h1 {
+  color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align:center;
+  text-transform: uppercase;
+  width: 275px;
+  margin: 20px auto 10px; /* left+right 20px centered top+bottom 10px */
+  user-select: none;
+}
+
+h1:hover {
+  background: rgba(0, 0, 0, 0.8);
+
 }
