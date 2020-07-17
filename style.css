@@ -92,7 +92,7 @@ a:active {
 /* Modal */
 .modal-container {
   background: rgba(0, 0, 0, 0.6);
-  display: none;
+  display: none;  /* will be overridden by .show-modal's display:flex */
   position: fixed;
   top: 0;       /* will take up the entire page - fixed to all 4 corners */
   left: 0;
