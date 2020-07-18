@@ -17,7 +17,7 @@ body {
   font-family: 'Karla', sans-serif;
 }
 
-h1 {
+h1 {  /* The Add Bookmark 'button' */
   color: white;
   padding: 20px;
   background: rgba(0, 0, 0, 0.5);
@@ -193,5 +193,4 @@ button:focus {
 
   }
 }
-
 
