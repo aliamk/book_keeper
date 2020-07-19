@@ -9,19 +9,18 @@ const bookmarksContainer = document.getElementById('bookmarks-container')
 // 
 let bookmarks = []
 
-// Show Modal - cursor in the first Input field
+// Show the Add Bookmark Modal - automatically position the cursor in the first Input field
 function showModal() {
   modal.classList.add('show-modal') // show the modal when clicking on h1 Add Bookmark
   websiteNameEl.focus()  // places cursor in the first field: Website Name
 }
 
-// Modal Even Listeners
+// Add Bookmark Modal Event Listeners
 modalShow.addEventListener('click', showModal)
-
-// Two ways to close the modal...
+// Two ways to close the Add Bookmark Modal...
 // 1) click on the X
 modalClose.addEventListener('click', () => modal.classList.remove('show-modal'))
-// 2) click outside of the modal's form.  console > MouseEvent > target
+// 2) click outside of the modal's form:  console > MouseEvent > target
 window.addEventListener('click', (e) => (e.target === modal ? modal.classList.remove('show-modal') : false))
 // window.addEventListener('click', (e) => console.log(e.target))
 
@@ -29,7 +28,7 @@ window.addEventListener('click', (e) => (e.target === modal ? modal.classList.re
 function validate(nameValue, urlValue) {
   const expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g
   const regex = new RegExp(expression)
-  if ( !nameValue || !urlValue ) {
+  if ( !nameValue || !urlValue ) { // If name and url fields are empty, create an alert
     alert('Please submit values for both fields')
     return false
   }
@@ -52,10 +51,10 @@ function buildBookmarks() {
   bookmarks.forEach((bookmark) => {
     const { name, url } = bookmark
     // console.log(name, url)
-    // item
-    const item = document.createElement('div')
-    item.classList.add('item')
-    // Close Icon
+    // Dynamically create html elements for the bookmark items - this is more secure than building the html in index.html 
+    const item = document.createElement('div') // 'item' represents every instance of a bookmark (parent element)
+    item.classList.add('item') // 
+    // Close Bookmark Icon
     const closeIcon = document.createElement('i')
     closeIcon.classList.add('fas', 'fa-times')
     closeIcon.setAttribute('title', 'Delete Bookmark')
@@ -75,7 +74,7 @@ function buildBookmarks() {
     // Append to bookmarks container
     linkInfo.append(favicon, link)
     item.append(closeIcon, linkInfo)
-    bookmarksContainer.appendChild(item)
+    bookmarksContainer.appendChild(item) // here, every single html element (item) generated above will be assigned to the bookmarks-container div in index.html
   })
 }
 
